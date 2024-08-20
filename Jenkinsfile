@@ -9,10 +9,10 @@ pipeline {
         ansiColor('xterm')
     }
     stages {
-        stage('test') {
+        stage('Install Dependencies') {
             steps {
                 sh """
-                echo "This is testing"
+                npm install
                 """
             }
         }

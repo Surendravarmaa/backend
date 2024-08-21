@@ -35,7 +35,7 @@ pipeline {
             steps {
                 sh """
                 npm install
-                zip -q -r backend.${appVersion}.zip * -x Jenkinsfile -x backend-${appVersion}.zip
+                zip -q -r backend-${appVersion}.zip * -x Jenkinsfile -x backend-${appVersion}.zip
                 ls -ltr
                 """
             }
@@ -53,7 +53,7 @@ pipeline {
                     artifacts: [
                         [artifactId: "backend",
                         classifier: '',
-                        file: "backend." + "${appVersion}" + '.zip',
+                        file: "backend-" + "${appVersion}" + '.zip',
                         type: 'zip']
                     ]
                 )
